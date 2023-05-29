@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import StarRating from './StarRating';
 
 export default function CreateForm({ onAccess = f => f }){
-
+    const [totalStars] = useState(5); //상태를 컴포넌트 트리 아래로 내려보낸다.
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [content, setContent] = useState("");
@@ -38,6 +39,10 @@ export default function CreateForm({ onAccess = f => f }){
                 value={content} 
                 onChange={e => setContent(e.target.value)}
                 required
+                />
+                <StarRating
+                    style={{backgroundColor: "beige", margin: "10px"}}
+                    totalStars={totalStars}
                 />
                 <button className="btn comment-btn">저장</button>
             </div>

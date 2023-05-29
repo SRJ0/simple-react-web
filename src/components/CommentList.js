@@ -5,7 +5,7 @@ export default function CommentList( { comments = [] } ) {
     return (
         <div className="gb-comment-list">
             {
-                comments.map(user => <Comment key={user.i} {...user}/>)
+                comments.map(comments => <Comment key={comments.id} {...comments}/>)
             }
         </div>
     );

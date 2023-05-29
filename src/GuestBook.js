@@ -1,12 +1,10 @@
-
 import React, {useState} from 'react';
-// import StarRating from './StarRating';
 import CreateForm from './components/CreateForm';
 import CommentList from './components/CommentList';
 import commentData from './data/comment-data.json';
+import { v4 } from 'uuid'; //npm install uuid
 
 export default function GuestBook() {
-  // const [totalStars] = useState(5); //상태를 컴포넌트 트리 아래로 내려보낸다.
   const [comments, setComments] = useState(commentData);
   return (
     <div className="gb-content">
@@ -20,20 +18,13 @@ export default function GuestBook() {
               date: "23-05-25",
               name,
               password,
-              content
+              content,
+              id: v4()
             }
           ];
           setComments(newComments);
         }}
       />
-      {/* <StarRating
-          style={{backgroundColor: "beige", margin: "10px"}}
-          totalStars={totalStars}
-      />
-      <StarRating
-          style={{backgroundColor: "skyblue", margin: "10px"}}
-          totalStars={totalStars}
-      /> */}
     </div>
   );
 }
