@@ -6,6 +6,7 @@ import ErrorPage from "./error-page";
 import LoginPage from "./login-page";
 import Page from './routes/page';
 import './index.css';
+import GuestBook from './GuestBook';
 
 const router = createBrowserRouter([
   {
@@ -17,8 +18,12 @@ const router = createBrowserRouter([
         path: "/pages/:pageId",
         element: <Page />,
       },
+      {
+        path: "guestbook",
+        element: <GuestBook />,
+      },
     ],
-  },
+  },  
   {
     path: "login",
     element: <LoginPage />,

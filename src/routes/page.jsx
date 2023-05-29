@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import { getPages, getPage } from "../pages";
+import { getPage } from "../pages";
 
 export default function Page() {
     const param = useParams();

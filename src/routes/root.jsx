@@ -10,8 +10,8 @@ export default function Root() {
                     <h1>Welcome to my place</h1>
                 </a>
             </header>
-            <div id="contents">
-                <nav id="lnb">
+            <div className="wrap">
+                <nav className="lnb">
                     <ul>
                         {pages.map((page) => (
                             <li key={page.id}>
@@ -21,16 +21,18 @@ export default function Root() {
                             </li>
                         ))}
                     </ul>
-                    {/* <div id="guestbook-btn">
-                        <Link to="guestbook">방명록</Link>
-                    </div> */}
-                    <div id="login-btn">
-                        <Link to="login">로그인</Link>
+                    <div className="btn-area">
+                        <div className="btn guestbook-btn">
+                            <Link to="guestbook">방명록</Link>
+                        </div>
+                        <div className="btn login-btn">
+                            <Link to="login">로그인</Link>
+                        </div>
                     </div>
                 </nav>
                 <main>
-                    <div id="content">
-                        <Outlet />
+                    <div className="content">
+                        <Outlet /> 
                     </div>
                 </main>
             </div>
