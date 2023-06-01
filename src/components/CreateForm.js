@@ -51,6 +51,7 @@ export default function CreateForm({ onAccess = f => f }){
                     style={{backgroundColor: "beige", margin: "10px"}}
                     totalStars={totalStars}
                     onRate={rate}
+                    selectedStars={rating}
                 />
                 <button className="btn comment-btn">저장</button>
             </div>

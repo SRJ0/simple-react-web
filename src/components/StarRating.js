@@ -7,10 +7,10 @@ const Star = ({selected = false, onSelect = f => f, onSave = f => f}) => (
 
 const createArray = length => [...Array(length)];
 
-export function StarRating({style = {}, totalStars, onRate = f => f, ...props}) {
+export function StarRating({style = {}, totalStars, savedStars, onRate = f => f, ...props}) {
 
-    const [selectedStars, setSelectedStars] = useState(0);
-    
+    const [selectedStars, setSelectedStars] = useState(0)
+    if(savedStars > 0) setSelectedStars(savedStars)
     return (
         <div style={{padding: "20px", width:"150px", ...style}} {...props}>
             {createArray(totalStars).map((n, i) => (
