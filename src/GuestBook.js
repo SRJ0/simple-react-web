@@ -11,7 +11,7 @@ export default function GuestBook() {
       <CommentList comments={comments} />
 
       <CreateForm
-        onAccess={(name, password, content) => {
+        onAccess={(name, password, content, rating) => {
           const newComments = [
             ...comments,
             {
@@ -19,6 +19,7 @@ export default function GuestBook() {
               name,
               password,
               content,
+              rating,
               id: v4()
             }
           ];

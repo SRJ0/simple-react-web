@@ -3,18 +3,21 @@
         "id": 1,
         "name": "harry",
         "content": "정말 좋은 곳이에요!",
-        "date": "23-05-25"
+        "date": "23-05-25",
+        "rating": 5
     },
     {
         "id": 2,
         "name": "porter",
         "content": "잘 보고 갑니다!",
-        "date": "23-05-25"
+        "date": "23-05-25",
+        "rating": 5
     },
     {
         "id": 3,
         "name": "wa",
         "content": "hello ridi!",
-        "date": "23-05-25"
+        "date": "23-05-25",
+        "rating": 3
     }
 ]

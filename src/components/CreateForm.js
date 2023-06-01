@@ -1,19 +1,25 @@
 import React, { useState } from "react";
-import StarRating from './StarRating';
+import {StarRating} from './StarRating';
 
 export default function CreateForm({ onAccess = f => f }){
     const [totalStars] = useState(5); //상태를 컴포넌트 트리 아래로 내려보낸다.
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [content, setContent] = useState("");
+    const [rating, setRating] = useState("");
 
     const submit = e => {
         e.preventDefault(); 
-        onAccess(name, password, content);
+        onAccess(name, password, content, rating);
         setName("");
         setPassword("");
         setContent("");
+        setRating("");
     };
+
+    const rate = r => {
+        setRating(r)
+    }
 
     return (
         <form onSubmit={submit}>
@@ -35,14 +41,16 @@ export default function CreateForm({ onAccess = f => f }){
                     />
                 </div>
                 <textarea
-                className="comment-content"
-                value={content} 
-                onChange={e => setContent(e.target.value)}
-                required
+                    className="comment-content"
+                    value={content} 
+                    onChange={e => setContent(e.target.value)}
+                    required
                 />
+                
                 <StarRating
                     style={{backgroundColor: "beige", margin: "10px"}}
                     totalStars={totalStars}
+                    onRate={rate}
                 />
                 <button className="btn comment-btn">저장</button>
             </div>

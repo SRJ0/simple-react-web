@@ -7,9 +7,10 @@ const Star = ({selected = false, onSelect = f => f, onSave = f => f}) => (
 
 const createArray = length => [...Array(length)];
 
-export default function StarRating({style = {}, totalStars, ...props}) {
+export function StarRating({style = {}, totalStars, onRate = f => f, ...props}) {
 
     const [selectedStars, setSelectedStars] = useState(0);
+    
     return (
         <div style={{padding: "20px", width:"150px", ...style}} {...props}>
             {createArray(totalStars).map((n, i) => (
@@ -17,8 +18,7 @@ export default function StarRating({style = {}, totalStars, ...props}) {
                     key={i} 
                     selected={selectedStars > i}
                     onSelect={() => setSelectedStars(i + 1)}
-                    onSave={() => console.log("saved")}
-
+                    onSave={onRate(selectedStars)}
                 />
             ))}
             &nbsp;
@@ -27,4 +27,17 @@ export default function StarRating({style = {}, totalStars, ...props}) {
             </span>
         </div>    
     );
+}
+
+export function StarRating2({selectedStars}) {
+    return (
+        <div style={{padding: "20px", width:"150px"}}>
+            {createArray(5).map((n, i) => (
+                <Star 
+                    key={i} 
+                    selected={selectedStars > i}
+                />
+            ))}
+        </div>
+    )
 }
